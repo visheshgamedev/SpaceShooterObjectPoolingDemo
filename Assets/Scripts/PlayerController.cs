@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5.0f;
@@ -35,6 +36,15 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         playerRB.velocity = new Vector2(moveHorizontal * moveSpeed, 0);
+        /*Vector3 mousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        mousePosition.z = 0f;
+        
+        Vector2 playerDirection = (mousePosition - transform.position).normalized;
+
+        Vector2 targetPosition = (Vector2)transform.position + playerDirection * 50f;
+
+        Vector2 newPosition = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.fixedDeltaTime);
+        playerRB.MovePosition(newPosition);*/
     }
 
     private void Shoot()

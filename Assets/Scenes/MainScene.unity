@@ -460,6 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5164378657138633711, guid: 6beca24cf28e7f8469204a8a0883742b, type: 3}
+  poolSize: 7
 --- !u!4 &611033892
 Transform:
   m_ObjectHideFlags: 0
